@@ -1,29 +1,38 @@
 
-:root{--bg:#f7fafc;--ink:#0f172a;--muted:#475569;--brand:#0f766e;--ink-inv:#ecfeff;--border:#e2e8f0;--radius:14px;--shadow:0 10px 28px rgba(15,23,42,.06);--max:1120px}
+:root{--bg:#f7fafc;--ink:#0f172a;--muted:#475569;--brand:#0f766e;--brand-2:#0b3b36;--ink-inv:#ecfeff;--border:#e2e8f0;--radius:16px;--shadow:0 12px 30px rgba(15,23,42,.08);--max:1120px}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif}
 img{max-width:100%;height:auto;display:block}
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
 .hidden{display:none}
-.site-header{background:#0b3b36;color:var(--ink-inv)}
+.site-header{background:var(--brand-2);color:#ecfeff;position:sticky;top:0;z-index:20}
 .header-inner{display:flex;align-items:center;gap:14px;height:72px}
-.brand{display:flex;align-items:center;font-weight:800}
-.logo{width:36px;height:36px;border-radius:8px;background:#fff;object-fit:contain;margin-right:10px}
+.brand{display:flex;align-items:center;font-weight:800;color:#ecfeff}
+.logo{width:36px;height:36px;border-radius:10px;background:#fff;object-fit:contain;margin-right:10px}
 .nav{margin-left:auto;display:flex;gap:14px;align-items:center}
-.btn{border:1px solid var(--brand);padding:8px 12px;border-radius:12px}
+.nav a{color:#c8faf0}
+.btn{border:1px solid var(--brand);padding:9px 14px;border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
 .btn-primary{background:var(--brand);color:#fff}
 .lang-switch img{width:20px;height:14px;border-radius:3px;border:1px solid #9ad7cf;cursor:pointer}
-.hero{position:relative;color:#fff;background:linear-gradient(120deg,var(--brand),#0b3b36)}
-.hero::before{content:'';position:absolute;inset:0;background:url('/assets/img/hero.jpg') center/cover no-repeat;opacity:.35}
-.hero-inner{position:relative;z-index:1;padding:56px 0;text-align:center}
-.hero-inner h1{margin:0 0 10px;font-size:clamp(28px,4vw,40px)}
-.hero-inner p{margin:0 auto 14px;color:#e6fffb;max-width:760px}
-.badge{display:inline-flex;align-items:center;gap:8px;background:#07312e;color:#bffcff;border:1px solid rgba(255,255,255,.25);padding:8px 12px;border-radius:999px;font-size:14px}
-.badge small{opacity:.9}
-.section{padding:24px 0}
-.notice{background:#ecfeff;border:1px solid #99f6e4;color:#064e3b;border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
-.notice strong{font-weight:700}
-.site-footer{background:#0b3b36;color:#d1fae5;margin-top:40px}
-.footer-inner{padding:22px 0;text-align:center}
+.hero{position:relative;color:#fff}
+.hero .bg{position:absolute;inset:0;opacity:.45;background:#0a6d64}
+.hero .bg img{width:100%;height:100%;object-fit:cover;mix-blend:overlay}
+.hero .inner{position:relative;z-index:1;padding:72px 0;text-align:center}
+.hero h1{margin:0 0 10px;font-size:clamp(30px,5vw,46px)}
+.hero p{margin:0 auto 10px;max-width:840px;color:#e6fffb}
+.page-hero{background:#eaf6f5;border-bottom:1px solid var(--border)}
+.page-hero .inner{padding:36px 0;display:flex;align-items:center;gap:18px}
+.page-hero img{width:56px;height:56px;border-radius:12px}
+.page-hero h1{margin:0;color:#07312e}
+.section{padding:30px 0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid-3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+.card img.cover{border-radius:12px;margin-bottom:10px;aspect-ratio:16/10;object-fit:cover}
+.site-footer{background:var(--brand-2);color:#d1fae5;margin-top:44px}
+.footer-inner{padding:24px 0;text-align:center}
 .site-footer a{color:#99f6e4}
+.footer-social a{margin:0 8px}
+.pay-buttons{display:flex;gap:12px;flex-wrap:wrap}.pay-buttons .btn{min-width:160px;text-align:center}
